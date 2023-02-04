@@ -1,1 +1,6 @@
 emacs/.emacs.d/private.el
+emacs/.emacs.d/auto-save-list
+emacs/.emacs.d/custom.el
+emacs/.emacs.d/elpa
+emacs/.emacs.d/recentf
+emacs/.emacs.d/transient
