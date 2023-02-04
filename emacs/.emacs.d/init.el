@@ -196,7 +196,7 @@
 (windmove-default-keybindings)
 
 ;; When cursor is on edge, move to the other side, as in a torus space
-(se:q windmove-wrap-around t)
+(setq windmove-wrap-around t)
 
 ;; Editing a lot of dockerfiles, so make sure I have a mode for that
 (use-package dockerfile-mode)
