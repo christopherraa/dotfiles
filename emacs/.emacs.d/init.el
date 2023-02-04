@@ -12,12 +12,12 @@
 
 ;; Read custom settings from custom.el in the emacs directory if such a file exist.
 ;; I don't really use it though.
-(defvar custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
 
 ;; Read any private settings from my private.el file. This will not be in git.
-(defvar private-file (expand-file-name "private.el" user-emacs-directory))
+(setq private-file (expand-file-name "private.el" user-emacs-directory))
 (when (file-exists-p private-file)
 	(load private-file))
 
