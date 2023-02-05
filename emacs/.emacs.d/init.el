@@ -38,6 +38,12 @@
 
 ;; Line numbers are nifty, but you might not want this in all modes / buffers (like eshell)
 (global-display-line-numbers-mode 1)
+(dolist (mode '(org-mode-hook
+								org-agenda-mode-hook
+								term-mode-hook
+								shell-mode-hook
+								eshell-mode-hook))
+	(add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;; Seeing matching parens in lisp (especially) is paramount
 (show-paren-mode 1)
@@ -202,6 +208,14 @@
 ;; Markdown is used every day, so get a mode for that as well
 (use-package markdown-mode)
 
+;; This package provides some useful and pretty hints about available key
+;; bindings for commands.
+(use-package which-key
+	:defer 0
+	:diminish which-key-mode
+	:config
+	(which-key-mode)
+	(setq which-key-idle-delay 1))
 
 ;; Prefer ivy + counsel for a completion framework setup
 (use-package ivy
@@ -223,13 +237,54 @@
 	(ivy-rich-mode 1)
 	(setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line))
 
+;; Ivy-prescient helps ivy present options for interactive commands that
+;; you frequently use.
+(use-package ivy-prescient
+	:after counsel
+	:custom
+	(ivy-prescient-enable-filtering nil)
+	:config
+	(prescient-persist-mode 1)
+	(ivy-prescient-mode 1))
+
+;; Helpful is pretty helpful in presenting better formatted help pages
+(use-package helpful
+	:commands (helpful-callable helpful-variable helpful-command helpful-key)
+	:custom
+	(counsel-describe-function-function #'helpful-callable)
+	(counsel-describe-variable-function #'helpful-variable)
+	:bind
+	([remap describe-function] . counsel-describe-function)
+	([remap describe-command] . helpful-command)
+	([remap describe-variable] . counsel-describe-variable)
+	([remap describe-key] . helpful-key))
+
+;; Use projectile to manage projects. Provides useful methods for swhitching
+;; projects, finding files in projects etc.
+(use-package projectile
+	:diminish projectile-mode
+	:config (projectile-mode)
+	:custom ((projectile-completion-system 'ivy))
+	:bind-keymap
+	("C-c p" . projectile-command-map)
+	:init
+	;; NOTE: Set this to the folder where you keep your Git repos!
+	(when (file-directory-p "~/Projects/Code")
+		(setq projectile-project-search-path '("~/Projects/Code")))
+	(setq projectile-switch-project-action #'projectile-dired))
+
+;; Make counsel and projectile play nice with each other
+(use-package counsel-projectile
+	:after projectile
+	:config (counsel-projectile-mode))
+
 ;; Make sure backup files do not clutter working directories
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 
 ;; Pretty parenthesis are pretty.
 (use-package rainbow-delimiters
-	:init (rainbow-delimiters-mode 1))
+	:hook prog-mode)
 
 ;; Syntax checking and highlighting of errors or code-smells
 (use-package flycheck
