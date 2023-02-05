@@ -214,6 +214,8 @@
 ;; Markdown is used every day, so get a mode for that as well
 (use-package markdown-mode)
 
+(use-package diminish)
+
 ;; This package provides some useful and pretty hints about available key
 ;; bindings for commands.
 (use-package which-key
@@ -294,12 +296,18 @@
 
 ;; Syntax checking and highlighting of errors or code-smells
 (use-package flycheck
+	:diminish
 	:init
 	(setq flycheck-check-syntax-automatically '(save))
 	(global-flycheck-mode))
 
 ;; Code completion using company
 (use-package company
+	:diminish company-mode
 	:hook prog-mode)
+
+;; Diminish eldoc-mode, as there is no point in cluttering the
+;; modeline with information that it has been loaded.
+(diminish 'eldoc-mode)
 
 ;;; init.el ends here
