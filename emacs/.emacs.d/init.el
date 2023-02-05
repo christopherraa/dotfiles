@@ -310,4 +310,9 @@
 ;; modeline with information that it has been loaded.
 (diminish 'eldoc-mode)
 
+(use-package doom-modeline
+	:custom
+	(doom-modeline-buffer-file-name-style 'relative-to-project)
+  :init (doom-modeline-mode 1))
+
 ;;; init.el ends here
