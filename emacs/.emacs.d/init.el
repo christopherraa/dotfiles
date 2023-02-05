@@ -2,6 +2,12 @@
 ;;;
 ;;; Commentary:
 ;; Emacs Startup File --- initialization for Emacs
+;;
+;; Many pieces of this setup has been shamlessly copied from "Emacs from scratch" by
+;; the talented David Wilson.
+;;   Github repo: https://github.com/daviwil/emacs-from-scratch
+;;   Github profile: https://github.com/daviwil
+;;   Youtube channel: https://www.youtube.com/@SystemCrafters
 
 ;;; Code:
 
