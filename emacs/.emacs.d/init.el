@@ -191,7 +191,16 @@
 	(cperl-indent-level 2)
 	(cperl-tab-always-indent t)
 	(cperl-indent-parens-as-block t)
-	(cperl-close-paren-offset (- cperl-indent-level)))
+	(cperl-electric-parens t)
+	(cperl-close-paren-offset 0)
+	(cperl-continued-statement-offset 0)
+	(cperl-indent-comment-at-column-0 t)
+	(cperl-indent-parens-as-block t)
+	(cperl-label-offset 0)
+	(cperl-merge-trailing-else nil)
+	(cperl-close-paren-offset (- cperl-indent-level))
+	:init
+	(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode)))
 (use-package cpanfile-mode)
 
 
