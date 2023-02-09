@@ -344,4 +344,7 @@
 	(doom-modeline-buffer-file-name-style 'relative-to-project)
   :init (doom-modeline-mode 1))
 
+(use-package wrap-region
+	:init (wrap-region-global-mode 1))
+
 ;;; init.el ends here
