@@ -110,8 +110,8 @@
 
 		 ;; Used to use this for email-handling as part of Org, but don't really do that any more.
 		 ("w" "Workflows")
-		 ;;		 ("we" "Checking Email" entry (file+olp+datetree org-todo-file)
-		 "* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1))
+		 ("we" "Checking Email" entry (file+olp+datetree org-todo-file)
+		 "* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)))
 
 	:config
 	;; Making org-mode just a little bit pretties
