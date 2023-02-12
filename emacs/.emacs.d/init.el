@@ -54,9 +54,9 @@
 ;; Seeing matching parens in lisp (especially) is paramount
 (show-paren-mode 1)
 
-;; Enable the exotica theme, as that is quite pleasant to use
-(use-package exotica-theme
-	:config (load-theme 'exotica t))
+;; Enable the dracula theme, as that is quite pleasant to use
+(use-package dracula-theme
+	:config (load-theme 'dracula t))
 
 ;; Org-mode is basically an essential part of my kit and day-to-day work. The config is
 ;; somewhat large, but the productivity gains are amazing.
