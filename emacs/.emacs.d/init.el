@@ -200,7 +200,12 @@
 	(cperl-merge-trailing-else nil)
 	(cperl-close-paren-offset (- cperl-indent-level))
 	:init
-	(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode)))
+	(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
+	;; Override font faces for cperl-mode, because highlighting of arrays and hashes
+	;; were plain and simple offesive to the eyes
+	:custom-face
+	(cperl-array-face ((t (:background nil :foreground "olivedrab" :weight bold))))
+	(cperl-hash-face ((t (:background nil :foreground "mediumpurple1" :slant italic :weight bold)))))
 (use-package cpanfile-mode)
 
 
