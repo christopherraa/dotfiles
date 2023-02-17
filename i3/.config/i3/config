@@ -169,6 +169,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym $mod+Shift+s sticky toggle
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
