@@ -175,9 +175,9 @@
 ;; Indentation. Many discussions have been had about this topic. I, unlike the fanatics on
 ;; either side of the TABS / SPACES divide, have settled on the unquestionably correct take
 ;; that tabs should be used for indentation, and spaces should be used for alignment. This
-;; is the only way everyone can have apleasant experience editing code since this allows
+;; is the only way everyone can have a pleasant experience editing code, since this allows
 ;; people to set their preferred _visual_ indentation width to whatever makes it easiest
-;; for them to read the code.
+;; for them to read the code, all the while maintaining correct indentation levels.
 (setq-default indent-tabs-mode t)
 
 ;; I prefer 2 char visual indentation, but I think most people like 4
