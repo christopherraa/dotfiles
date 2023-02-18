@@ -43,3 +43,17 @@ Tmux also have to be told (~/.tmux.conf`) that 24bit is the bee's knees:
 set -g default-terminal "xterm-24bit"
 set -g terminal-overrides ',xterm-24bit:Tc'
 ```
+
+## Email
+
+For quite some time I was using [mu4e](https://djcbsoftware.nl/code/mu/mu4e.html) for email but then I got the _immensely_ good idéa that I should go back to using browser based email clients (Office 365, Roundcube and one other company-specific client) for a while, just to get some basis for comparison with my mu4e setup. I rue the day. Truly.
+
+A year was allocated to the experiment wherein I worked on getting proper habits for efficient email handling through the browser. This included workflow improvements, sensible keybindings etc. The conclusion is that it is not possible to do email management efficiently at all when working in the browser. At least not for me. Operations in mu4e are easily done in $1 \over 10$ of the time spent in the browser. For me this is a **substantial** part of my week.
+
+So back to mu4e it is. My current setup includes:
+
+- [isync / mbsync](https://isync.sourceforge.io/) for pulling email for multiple accounts
+- [mu](https://djcbsoftware.nl/code/mu/) for indexing email
+- [mu4e](https://djcbsoftware.nl/code/mu/mu4e.html) for interacting with email through emacs
+
+As mentioned I pull email for multiple accounts, and likewise I have mu4e set up with multiple contexts. Some people prefer having merged inboxes, but for me having complete isolation between contexts is important for productivity. This is reflected in the setup of keybindings that eg. change folders you jump to depending on the selected context.
