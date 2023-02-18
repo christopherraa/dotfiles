@@ -16,6 +16,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+;; Enable "C-x l" to wuickly lowercasea region, and "C-x u" to upcase region
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 ;; Read custom settings from custom.el in the emacs directory if such a file exist.
 ;; I don't really use it though.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
