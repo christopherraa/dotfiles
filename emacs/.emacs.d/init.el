@@ -266,7 +266,12 @@
 	:config
 	(setq ivy-use-virtual-buffers t)
 	(setq ivy-extra-directories nil)
-	(ivy-mode 1))
+	(ivy-mode 1)
+	:custom-face
+	(ivy-minibuffer-match-face-2 ((t (:background "slateblue1" :foreground "#282a36"))))
+	(ivy-minibuffer-match-face-3 ((t (:background "darkseagreen" :foreground "#282a36"))))
+	(ivy-minibuffer-match-face-4 ((t (:background "olivedrab" :foreground "#282a36")))))
+
 (use-package counsel
 	:diminish
 	:config
