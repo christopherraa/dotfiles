@@ -56,7 +56,9 @@
 
 ;; Enable the dracula theme, as that is quite pleasant to use
 (use-package dracula-theme
-	:config (load-theme 'dracula t))
+	:config
+	(load-theme 'dracula t)
+	(set-face-attribute 'region nil :background "#dda0dd"))
 
 ;; Org-mode is basically an essential part of my kit and day-to-day work. The config is
 ;; somewhat large, but the productivity gains are amazing.
