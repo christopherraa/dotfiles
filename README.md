@@ -63,3 +63,5 @@ So back to mu4e it is. My current setup includes:
 - [mu4e](https://djcbsoftware.nl/code/mu/mu4e.html) for interacting with email through emacs
 
 As mentioned I pull email for multiple accounts, and likewise I have mu4e set up with multiple contexts. Some people prefer having merged inboxes, but for me having complete isolation between contexts is important for productivity. This is reflected in the setup of keybindings that eg. change folders you jump to depending on the selected context.
+
+The applications mbsync and mu/mu4e are installed through the system package manager (`sudo apt install isync mu4e`). For `mu4e` and `mu` it is done simply because it is very convenient that the emacs package `mu4e` and the system runtime `mu` is in sync in terms of version. For `isync` is also just simpler to get it through the package manager rather than compiling yourself.
