@@ -5,7 +5,7 @@ Things should be pretty self-explainatory. Drop files where appropriate. Make su
 
 Topics covered:
 
-- [Easy configuration deployment](#easy-configuration deployment)
+- [Easy configuration deployment](#easy-configuration-deployment)
 - [Colors](#colors-are-bastards)
 - [Email](#email)
 
